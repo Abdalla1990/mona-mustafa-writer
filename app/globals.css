@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #faf7f2;
+  --color-ink: #1c1917;
+  --color-forest: #1e4d3d;
+  --color-plum: #7a4a75;
+  --color-gold: #b8952f;
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body), ui-serif, Georgia, serif;
+  --font-serif: var(--font-display), ui-serif, Georgia, serif;
+}
+
+body {
+  font-family: var(--font-body), ui-serif, Georgia, serif;
+}
+
+@keyframes rise-fade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise-fade 0.9s ease-out both;
+}
+
+.animate-rise-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.animate-rise-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.animate-rise-delay-3 {
+  animation-delay: 0.36s;
+}
