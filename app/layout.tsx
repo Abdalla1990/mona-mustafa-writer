@@ -21,12 +21,12 @@ const script = Great_Vibes({
 
 export const metadata: Metadata = {
   title: "Mona Mustafa — Writer",
-  description:
-    "Writer and author of Start with Bismillah. Stories, publications, and ways to connect.",
+    description:
+      "Homeschooling mother, children's author writing with an Islamic taste—Start with Bismillah and Islamic children's resources for Muslim families. Calgary.",
   openGraph: {
     title: "Mona Mustafa — Writer",
     description:
-      "Writer and author of Start with Bismillah. Publications and contact.",
+      "Author of Start with Bismillah—children's materials with Islamic character and remembrance for Muslim families.",
     type: "website",
   },
 };

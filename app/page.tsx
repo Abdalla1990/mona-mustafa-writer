@@ -1,6 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ContactForm } from "./components/ContactForm";
+import { SiteFooter } from "./components/SiteFooter";
+import { SiteHeader } from "./components/SiteHeader";
+import { INSTAGRAM_MONA_URL } from "@/app/lib/external-links";
 
 const PUBLICATIONS = [
   {
@@ -25,32 +27,7 @@ export default function Home() {
             "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(184,149,47,0.12), transparent), radial-gradient(ellipse 60% 40% at 100% 0%, rgba(30,77,61,0.08), transparent)",
         }}
       />
-      <header className="mx-auto flex max-w-5xl items-center justify-between gap-6 px-6 py-8 sm:px-10">
-        <Link
-          href="/"
-          className="animate-rise block w-44 shrink-0 overflow-hidden rounded-3xl ring-1 ring-[var(--color-forest)]/10 sm:w-52"
-        >
-          <Image
-            src="/mona-logo.png"
-            alt="Mona Mustafa"
-            width={520}
-            height={200}
-            className="h-auto w-full rounded-3xl object-contain"
-            priority
-          />
-        </Link>
-        <nav className="animate-rise animate-rise-delay-1 flex flex-wrap items-center justify-end gap-x-6 gap-y-2 text-sm font-medium tracking-wide text-[var(--color-forest)] sm:gap-8">
-          <a className="hover:text-[var(--color-plum)]" href="#about">
-            About
-          </a>
-          <a className="hover:text-[var(--color-plum)]" href="#publications">
-            Work
-          </a>
-          <a className="hover:text-[var(--color-plum)]" href="#contact">
-            Contact
-          </a>
-        </nav>
-      </header>
+      <SiteHeader active="home" />
 
       <main>
         <section className="mx-auto grid max-w-5xl items-center gap-12 px-6 pb-20 sm:grid-cols-[minmax(0,1fr)_280px] sm:gap-16 sm:px-10 lg:grid-cols-[minmax(0,1fr)_320px]">
@@ -65,9 +42,13 @@ export default function Home() {
               Mustafa
             </h1>
             <p className="animate-rise animate-rise-delay-2 mt-5 max-w-xl text-lg leading-relaxed text-stone-600 sm:text-xl">
-              Writer crafting warm, faith-rooted stories for families and young
-              readers—beginning with thoughtful books you can hold in your
-              hands.
+              Mona Mustafa is a homeschooling mother of two and a passionate
+              educator with years of teaching experience. Her journey in
+              education has inspired her to create enriching materials for
+              children, including her most recent book,{" "}
+              <em>Start with Bismillah</em>, which was inspired by her
+              daughter&apos;s own journey. In her free time, she enjoys gardening
+              and kayaking on beautiful summer days in Calgary.
             </p>
             <div className="animate-rise animate-rise-delay-3 mt-8 flex flex-wrap gap-4">
               <a
@@ -75,14 +56,6 @@ export default function Home() {
                 className="inline-flex rounded-full border border-[var(--color-forest)]/25 bg-white/70 px-6 py-3 text-sm font-semibold text-[var(--color-forest)] shadow-sm backdrop-blur-sm transition hover:border-[var(--color-forest)]/50"
               >
                 See publications
-              </a>
-              <a
-                href="https://linktr.ee/Mona.Mustafa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex rounded-full px-6 py-3 text-sm font-semibold text-[var(--color-plum)] underline-offset-4 hover:underline"
-              >
-                Link in bio
               </a>
             </div>
           </div>
@@ -103,28 +76,6 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
-        </section>
-
-        <section
-          id="about"
-          className="border-t border-[var(--color-forest)]/10 bg-white/40 py-20 backdrop-blur-[2px]"
-        >
-          <div className="mx-auto max-w-3xl px-6 sm:px-10">
-            <h2 className="font-serif text-3xl font-semibold text-[var(--color-forest)] sm:text-4xl">
-              A few words
-            </h2>
-            <p className="mt-6 text-lg leading-relaxed text-stone-700">
-              Mona is an emerging author sharing stories shaped by care,
-              curiosity, and everyday faith. Her debut activity book,{" "}
-              <em>Start with Bismillah</em>, invites children into gentle
-              routines and joyful learning—meant to be read, colored, and lived
-              together at home.
-            </p>
-            <p className="mt-4 text-lg leading-relaxed text-stone-700">
-              This space is intentionally small: a calm corner of the internet
-              where you can browse her work and reach out directly.
-            </p>
           </div>
         </section>
 
@@ -182,23 +133,21 @@ export default function Home() {
             </p>
             <ContactForm />
             <p className="mt-10 text-center text-sm text-stone-500">
-              Prefer socials?{" "}
+              Instagram:&nbsp;
               <a
-                href="https://linktr.ee/Mona.Mustafa"
+                href={INSTAGRAM_MONA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-[var(--color-plum)] underline-offset-2 hover:underline"
               >
-                @Mona.Mustafa on Linktree
+                @monamustafa89
               </a>
             </p>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-[var(--color-forest)]/10 py-10 text-center text-sm text-stone-500">
-        <p>© {new Date().getFullYear()} Mona Mustafa. All rights reserved.</p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
