@@ -76,10 +76,6 @@ export function ContactForm() {
       >
         Send email
       </button>
-      <p className="text-xs leading-relaxed text-stone-500">
-        Opens your email app with this message addressed to Mona. If nothing
-        happens, check that a default mail program is set on your device.
-      </p>
     </form>
   );
 }
